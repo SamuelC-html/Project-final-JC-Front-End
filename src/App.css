@@ -1,42 +1,48 @@
-#root {
-  max-width: 1280px;
+/* 🎨 Variables de color */
+:root {
+  --color-bg: #f9f9f9;
+  --color-text: #222;
+  --color-card-bg: #fff;
+  --color-border: #ccc;
+  --color-accent: #4caf50;
+  --color-danger: #e53935;
+}
+
+/* 🌙 Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121212;
+    --color-text: #eaeaea;
+    --color-card-bg: #1e1e1e;
+    --color-border: #333;
+    --color-accent: #66bb6a;
+    --color-danger: #ef5350;
+  }
+}
+
+/* 💻 Estilos base */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+}
+
+/* 🎮 Título principal */
+.main-title {
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
 }
