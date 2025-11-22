@@ -1,5 +1,6 @@
 /* Este CSS es para la página de Estadísticas */
 .estadisticas-container {
+  margin: 60px auto;
   padding: 2rem;
   background-color: #11271463; 
   color: #FFFFFF;
@@ -8,8 +9,8 @@
 
 .estadisticas-container h1 {
   margin-bottom: 2rem;
-  font-size: 2.5rem;
-  color: #E0E0E0;
+  font-size: 2.4rem;
+  color: #4caf50;
 }
 
 /* Este 'wrapper' es importante para que el gráfico 
@@ -41,4 +42,32 @@
   font-size: 1.2rem;
   color: #FF6B6B; /* Un color rojo para errores */
   font-weight: 500;
+}
+
+.estadisticas-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Columna izquierda */
+.estadisticas-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Columna derecha */
+.estadisticas-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .estadisticas-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -32,7 +32,7 @@ const HorasChart = ({ games }) => {
         label: 'Horas Jugadas',
         data: sortedGames.map(game => game.horasJugadas), // <-- CAMBIADO
         backgroundColor: 'rgba(24, 16, 16, 0.38)',
-        borderColor: 'rgba(37, 83, 31, 1)',
+        borderColor: '#00ff88',
         borderWidth: 1,
       },
     ],

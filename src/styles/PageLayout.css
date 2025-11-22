@@ -12,3 +12,7 @@
 .page-layout > * {
   align-self: start;
 }
+
+.library-right {
+  margin: 30px auto;
+}

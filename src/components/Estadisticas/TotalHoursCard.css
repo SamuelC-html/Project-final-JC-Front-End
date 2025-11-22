@@ -1,0 +1,23 @@
+.metric-card {
+  background: #3c8c40;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 250px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.metric-card h3 {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.metric-value {
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+}

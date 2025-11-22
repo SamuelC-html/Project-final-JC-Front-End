@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 // Importamos nuestros componentes de gráfico
 import HorasChart from '../components/LogEstadisticas';
 import CalificacionChart from "../components/Estadisticas/CalificacionChart";
+import CompletadosPie from "../components/Estadisticas/CompletadosPie";
+import HoursByPlatformChart from '../components/Estadisticas/HoursByPlatformChart';
+import TotalHoursCard from "../components/Estadisticas/TotalHoursCard";
+import TopPlayedGames from "../components/Estadisticas/TopPlayedGames";
+
 // Importamos el CSS de esta página
 import '../styles/EstadisticasPage.css';
 
@@ -81,16 +86,43 @@ const Estadisticas = () => {
     <div className="estadisticas-container">
       <h1>Estadísticas de Juego</h1>
       
-        <div className="chart-wrapper">
-          <HorasChart games={games} />
-        </div>
+      <div className='estadisticas-grid'>
+        <div className='estadisticas-left'>
+          <div className="stats-section">
+            <TopPlayedGames games={games} />
+          </div>
+          
+          <div className="stats-section">
+            <TotalHoursCard games={games} />
+          </div>
 
-        <div className="chart-wrapper">
-          <CalificacionChart games={games} />
         </div>
+        
+        <div className='estadisticas-right'>
+            <div className="chart-wrapper">
+              <HorasChart games={games} />
+            </div>
+
+            <div className="chart-wrapper">
+              <CalificacionChart games={games} />
+            </div>
+
+            <div className="chart-wrapper">
+              <CompletadosPie games={games} />
+            </div>
+
+            <div className="chart-wrapper">
+              <HoursByPlatformChart games={games} />
+            </div>
+        
+        </div>  
+      </div>  
+
+
 
     </div>
   );
+
 };
 
 export default Estadisticas;

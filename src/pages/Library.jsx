@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GameForm from "../components/GameForm";
-import GameList from "../components/GameList";
-import SearchBar from "../components/SearchBar"; // ← nuevo
+import GameForm from "../components/GameForm";  // ← importamos el formulario de juegos
+import GameList from "../components/GameList"; // ← importamos la lista de juegos
+import SearchBar from "../components/SearchBar"; // ← importamos el buscador
 import "../styles/LibraryPage.css";
 import "../styles/PageLayout.css";
 
@@ -11,6 +11,7 @@ function LibraryPage() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [query, setQuery] = useState(""); // ← estado del buscador
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,19 +31,24 @@ function LibraryPage() {
   };
 
   return (
-    <>
-    
+  <div className="library-container">
     <div className="page-layout">
-      <h1 className="main-title"></h1>
+          {/* 🟩 Columna izquierda (sticky) */}
+      <div className="left-wrapper">
+        <div className="library-left">
+          <SearchBar query={query} onChange={setQuery} />
+          <GameForm selectedGame={selectedGame} onSave={handleSave} />
+        </div>
+      </div>
 
-      <SearchBar query={query} onChange={setQuery} /> {/* Buscador */}
-
-      <GameForm selectedGame={selectedGame} onSave={handleSave} />
-
-      <GameList key={refreshKey} onEdit={handleEdit} query={query} />
+      {/* 🟦 Columna derecha (scroll normal) */}
+      <div className="library-right">
+        <GameList key={refreshKey} onEdit={handleEdit} query={query} />
+      </div>
     </div>
-    </>
     
+  </div>
+
   );
 }
 

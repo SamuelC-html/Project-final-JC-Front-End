@@ -6,7 +6,7 @@ function NavigationBar() {
   const currentPath = location.pathname;
 
   // Mostrar barra solo en estas rutas
-  const showNav = ["/library", "/reviews", "/profile"].includes(currentPath);
+  const showNav = ["/library", "/reviews", "/profile", "/estadisticas"].includes(currentPath);
   if (!showNav) return null;
 
   // Botones excluyendo la ruta actual
@@ -14,6 +14,7 @@ function NavigationBar() {
     { name: "Home", path: "/home" },
     { name: "Library", path: "/library" },
     { name: "Reviews", path: "/reviews" },
+    { name: "Estadisticas", path: "/estadisticas" },
     { name: "Profile", path: "/profile" },
   ].filter(item => item.path !== currentPath);
 
